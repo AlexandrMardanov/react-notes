@@ -6,6 +6,13 @@
     font-size: 16px;
     position: relative;
 
+    &__title {
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
     &__delete {
         position: absolute;
         cursor: pointer;

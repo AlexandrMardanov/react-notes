@@ -10,7 +10,8 @@ import './App.scss'
 class App extends Component {
     state = {
         notes: NOTES,
-        text: ''
+        text: '',
+        title: ''
     }
 
     componentDidMount = () => {
@@ -31,11 +32,16 @@ class App extends Component {
         this.setState({ text: e.target.value })
     }
 
+    handleTitleChange = (e) => {
+        this.setState({ title: e.target.value })
+    }
+
     handleNoteAdd = () => {
-        if (this.state.text) {
+        if (this.state.text && this.state.title) {
             const note = {
                 text: this.state.text,
-                id: Date.now()
+                id: Date.now(),
+                title: this.state.title
             }
 
             this.setState({
@@ -47,7 +53,7 @@ class App extends Component {
     }
 
     clearText = () => {
-        this.setState({ text: '' })
+        this.setState({ text: '', title: '' })
     }
 
     saveToLocalStorage = () => {
@@ -68,8 +74,10 @@ class App extends Component {
                 <h1>React Notes</h1>
 
                 <NoteEditor
+                    title={this.state.title}
                     text={this.state.text}
                     handleTextChange={this.handleTextChange}
+                    handleTitleChange={this.handleTitleChange}
                     handleNoteAdd={this.handleNoteAdd}
                 />
 

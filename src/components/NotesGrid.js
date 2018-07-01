@@ -13,6 +13,7 @@ const NotesGrid = (props) => {
                     return <Note
                         key={note.id}
                         id={note.id}
+                        title={note.title}
                         handleNoteDelete={handleNoteDelete}
                     >
                         {note.text}

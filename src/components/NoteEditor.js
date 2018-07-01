@@ -4,10 +4,17 @@ import PropTypes from 'prop-types'
 import './NoteEditor.scss'
 
 const NoteEditor = (props) => {
-    const { text, handleTextChange, handleNoteAdd } = props
+    const { text, handleTextChange, handleNoteAdd, title, handleTitleChange } = props
 
     return (
         <div className='NoteEditor'>
+            <input
+                type='text'
+                placeholder='Enter title'
+                className='NoteEditor__input'
+                value={title}
+                onChange={handleTitleChange}
+            />
             <textarea
                 rows={5}
                 placeholder='Enter note'
@@ -27,7 +34,9 @@ const NoteEditor = (props) => {
 
 NoteEditor.propTypes = {
     text: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     handleTextChange: PropTypes.func.isRequired,
+    handleTitleChange: PropTypes.func.isRequired,
     handleNoteAdd: PropTypes.func.isRequired
 }
 
