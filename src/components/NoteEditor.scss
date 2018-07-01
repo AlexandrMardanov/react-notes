@@ -1,0 +1,31 @@
+.NoteEditor {
+    width: 100%;
+    margin-bottom: 20px;
+
+    &__textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    &__button {
+        display: block;
+        width: 100px;
+        margin: 0 auto;
+        appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        color: #fff;
+        background: #000;
+        text-align: center;
+        font-weight: bold;
+        padding: 5px 0;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+            background: #4caf50;
+        }
+    }
+}
