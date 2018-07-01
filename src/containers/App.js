@@ -32,16 +32,18 @@ class App extends Component {
     }
 
     handleNoteAdd = () => {
-        const note = {
-            text: this.state.text,
-            id: Date.now()
+        if (this.state.text) {
+            const note = {
+                text: this.state.text,
+                id: Date.now()
+            }
+
+            this.setState({
+                notes: [note, ...this.state.notes]
+            })
+
+            this.clearText()
         }
-
-        this.setState({
-            notes: [note, ...this.state.notes]
-        })
-
-        this.clearText()
     }
 
     clearText = () => {
